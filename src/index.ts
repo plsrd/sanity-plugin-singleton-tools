@@ -1,11 +1,18 @@
-import { definePlugin } from 'sanity';
+import { definePlugin, SanityDocument } from 'sanity';
 
-const getIsSingleton = (schema, schemaType) => {
-  const documentSchema = schema._original?.types?.find(
-    ({ name }) => name == schemaType
-  );
+interface SingletonSchema extends SanityDocument {
+  options: {
+    singleton?: boolean;
+  };
+}
 
-  return documentSchema?.options?.singleton;
+const getIsSingleton = (schema: any, schemaType: string): boolean => {
+  const documentSchema: SingletonSchema | undefined =
+    schema._original?.types?.find(
+      ({ name }: SingletonSchema) => name == schemaType
+    );
+
+  return documentSchema?.options?.singleton ?? false;
 };
 
 export const singletonPlugin = definePlugin(options => {
@@ -17,23 +24,23 @@ export const singletonPlugin = definePlugin(options => {
         { schema, creationContext: { type, schemaType } }
       ) => {
         const singletons = schema._original?.types
-          .filter(({ options }) => options?.singleton)
+          .filter(({ options }: any) => options?.singleton)
           .map(s => s.name);
 
-        const filterSingletons = ({ templateId }) =>
+        const filterSingletons = ({ templateId }: { templateId: string }) =>
           !singletons?.includes(templateId);
 
         if (type == 'global') return prev.filter(filterSingletons);
 
-        return singletons?.includes(schemaType)
+        return singletons?.includes(schemaType as string)
           ? prev.filter(filterSingletons)
           : prev;
       },
       actions: (prev, { schema, schemaType }) => {
-        return getIsSingleton(schema, schemaType)
-          ? prev.filter(({ action }) =>
+        return getIsSingleton(schema, schemaType as string)
+          ? prev.filter(({ action }: { action?: string }) =>
               ['publish', 'unpublish', 'discardChanges', 'restore'].includes(
-                action
+                action as string
               )
             )
           : prev;

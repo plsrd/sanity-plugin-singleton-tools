@@ -1,10 +1,10 @@
 import { definePlugin } from "sanity";
 const getIsSingleton = (schema, schemaType) => {
-  var _a, _b, _c;
+  var _a, _b, _c, _d;
   const documentSchema = (_b = (_a = schema._original) == null ? void 0 : _a.types) == null ? void 0 : _b.find(
     ({ name }) => name == schemaType
   );
-  return (_c = documentSchema == null ? void 0 : documentSchema.options) == null ? void 0 : _c.singleton;
+  return (_d = (_c = documentSchema == null ? void 0 : documentSchema.options) == null ? void 0 : _c.singleton) != null ? _d : !1;
 }, singletonPlugin = definePlugin((options) => ({
   name: "singleton-plugin",
   document: {
