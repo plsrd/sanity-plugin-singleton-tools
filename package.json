@@ -1,7 +1,7 @@
 {
-  "name": "sanity-plugin-singleton",
-  "version": "0.1.0",
-  "description": "A lightweight plugin to create singletons using your document's options",
+  "name": "sanity-plugin-singleton-tools",
+  "version": "1.0.0",
+  "description": "A plugin to create and manage singletons in your Sanity Studio",
   "keywords": [
     "sanity",
     "sanity-plugin"

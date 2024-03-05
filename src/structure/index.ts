@@ -1,6 +1,5 @@
 import { getSingletonDocuments } from '../helpers';
 import { DocumentIcon } from '@sanity/icons';
-import { StructureBuilder, StructureContext } from 'sanity/structure';
 import {
   SingletonDocumentListItemConfig,
   SingletonPluginListItemsConfig,

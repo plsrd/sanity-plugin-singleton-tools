@@ -2,9 +2,9 @@ import { definePlugin } from 'sanity';
 import { newDocumentOptions } from './newDocumentOptions';
 import { actions } from './actions';
 
-export const singletonPlugin = definePlugin(options => {
+export const singletonTools = definePlugin(options => {
   return {
-    name: 'singleton-plugin',
+    name: 'singleton-tools',
     document: {
       newDocumentOptions,
       actions,

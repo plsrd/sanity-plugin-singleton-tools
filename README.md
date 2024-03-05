@@ -2,10 +2,18 @@
 
 > This is a **Sanity Studio v3** plugin.
 
+## What does this plugin do?
+
+This plugin adds convenience functions to reduce the overhead of creating [single edit](https://www.sanity.io/docs/create-a-link-to-a-single-edit-page-in-your-main-document-type-list) (singleton) documents in the Sanity Studio.
+
+Usually, creating a singleton requires you to alter both the `document.actions` and `document.newDocumentOptions` functions in your `sanity.config`. With this plugin, you simply need to add `singleton: true` to your document's schema to automatically handle it for you!
+
+In addition, this plugin also adds simple methods for customizing the way your singletons are listed in your Studio's Structure.
+
 ## Installation
 
 ```sh
-npm install sanity-plugin-singleton
+npm install sanity-plugin-singleton-tools
 ```
 
 ## Usage
@@ -13,13 +21,13 @@ npm install sanity-plugin-singleton
 Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
-import {defineConfig} from 'sanity'
-import {myPlugin} from 'sanity-plugin-singleton'
+import { defineConfig } from 'sanity';
+import { myPlugin } from 'sanity-plugin-singleton-tools';
 
 export default defineConfig({
   //...
   plugins: [myPlugin({})],
-})
+});
 ```
 
 ## License

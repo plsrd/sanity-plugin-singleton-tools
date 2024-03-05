@@ -3,10 +3,10 @@ import {
   singletonDocumentListItems,
   filteredDocumentListItems,
 } from './structure';
-import { singletonPlugin } from './pluginConfig';
+import { singletonTools } from './pluginConfig';
 
 export {
-  singletonPlugin,
+  singletonTools,
   singletonDocumentListItem,
   singletonDocumentListItems,
   filteredDocumentListItems,
