@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-singleton",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A lightweight plugin to create singletons using your document's options",
   "keywords": [
     "sanity",
@@ -71,9 +71,8 @@
   "engines": {
     "node": ">=14"
   },
-  "sanityPlugin": {
-    "verifyPackage": {
-      "tsc": false
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plsrd/sanity-plugin-singleton"
   }
 }
