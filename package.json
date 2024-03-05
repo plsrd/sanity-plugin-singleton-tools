@@ -38,6 +38,7 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
+    "@sanity/icons": "^2.10.3",
     "@sanity/incompatible-plugin": "^1.0.4"
   },
   "devDependencies": {
