@@ -15,7 +15,7 @@ const singletonDocumentListItem = (config: SingletonDocumentListItemConfig) => {
   const { S, type, title, icon, id, context } = config;
   const { schema } = context;
   const listTitle = title ?? schema.get(type)?.title ?? type;
-  const listIcon = icon ?? DocumentIcon;
+  const listIcon = icon ?? schema.get(type)?.icon ?? DocumentIcon;
   const listId = id ?? type;
 
   return S.listItem()
