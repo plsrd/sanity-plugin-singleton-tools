@@ -1,6 +1,6 @@
 import { ConfigContext, DocumentOptions, SanityDocument } from 'sanity';
 import { StructureBuilder } from 'sanity/structure';
-import { ComponentType } from 'react';
+import { ComponentType, ReactNode } from 'react';
 
 export interface SingletonDocumentListItemConfig {
   S: StructureBuilder;
@@ -8,7 +8,7 @@ export interface SingletonDocumentListItemConfig {
   type: string;
   title?: string;
   id?: string;
-  icon?: ComponentType;
+  icon?: ComponentType | ReactNode;
 }
 
 export interface SingletonPluginListItemsConfig {
