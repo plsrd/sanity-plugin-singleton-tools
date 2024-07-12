@@ -1,5 +1,5 @@
-import { DocumentActionsContext, DocumentActionsResolver } from 'sanity';
-import { getIsSingleton } from './helpers';
+import { DocumentActionsContext, DocumentActionsResolver } from "sanity";
+import { getIsSingleton } from "./helpers";
 
 export const actions: DocumentActionsResolver = (
   prev,
@@ -7,9 +7,7 @@ export const actions: DocumentActionsResolver = (
 ) => {
   return getIsSingleton(schema, schemaType)
     ? prev.filter(({ action }) =>
-        ['publish', 'unpublish', 'discardChanges', 'restore'].includes(
-          action as string
-        )
+        ["publish", "discardChanges", "restore"].includes(action as string)
       )
     : prev;
 };
