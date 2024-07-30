@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-singleton-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A plugin to create and manage singletons in your Sanity Studio",
   "keywords": [
     "sanity",
