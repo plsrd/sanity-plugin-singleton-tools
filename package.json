@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-singleton-tools",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A plugin to create and manage singletons in your Sanity Studio",
   "keywords": [
     "sanity",
@@ -38,7 +38,7 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
-    "@sanity/icons": "^2.10.3",
+    "@sanity/icons": "^3.7.4",
     "@sanity/incompatible-plugin": "^1.0.4"
   },
   "devDependencies": {
@@ -66,7 +66,7 @@
   },
   "peerDependencies": {
     "react": "^18 || ^19",
-    "sanity": "^3"
+    "sanity": "^3 || ^4"
   },
   "engines": {
     "node": ">=14"
